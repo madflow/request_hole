@@ -21,34 +21,34 @@ archives:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 snapshot:
   name_template: "{{ .Tag }}-next"
 changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-brews:
-  -
-    name: rh
-    goarm: 6
-    repository:
-      owner: aaronvb
-      name: homebrew-request_hole
-    url_template: "https://github.com/aaronvb/request_hole/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-    commit_author:
-      name: Aaron Van Bokhoven
-      email: bokhoven@gmail.com
-    folder: Formula
-    homepage: "https://github.com/aaronvb/request_hole"
-    description: "Request Hole is a command line tool for creating a temporary endpoint."
-    license: "MIT"
-    dependencies:
-      - name: go
-        type: optional
-    test: |
-      system "#{bin}/rh version"
-    install: |
-      bin.install "rh"
+      - "^docs:"
+      - "^test:"
+# brews:
+#   -
+#     name: rh
+#     goarm: 6
+#     repository:
+#       owner: aaronvb
+#       name: homebrew-request_hole
+#     url_template: "https://github.com/aaronvb/request_hole/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+#     commit_author:
+#       name: Aaron Van Bokhoven
+#       email: bokhoven@gmail.com
+#     folder: Formula
+#     homepage: "https://github.com/aaronvb/request_hole"
+#     description: "Request Hole is a command line tool for creating a temporary endpoint."
+#     license: "MIT"
+#     dependencies:
+#       - name: go
+#         type: optional
+#     test: |
+#       system "#{bin}/rh version"
+#     install: |
+#       bin.install "rh"

@@ -36,7 +36,7 @@ func Execute(buildInfo map[string]string, staticFS http.FileSystem) error {
 func init() {
 	rootCmd.PersistentFlags().IntVarP(&Port, "port", "p", 8080, "sets the port for the endpoint")
 	rootCmd.PersistentFlags().StringVarP(&Address, "address", "a", "localhost", "sets the address for the endpoint")
-	rootCmd.PersistentFlags().IntVarP(&ResponseCode, "response_code", "r", 200, "sets the response code")
+	rootCmd.PersistentFlags().IntVarP(&ResponseCode, "response_code", "", 200, "sets the response code")
 	rootCmd.PersistentFlags().BoolVar(&Details, "details", false, "shows header details in the request")
 	rootCmd.PersistentFlags().StringVar(&LogFile, "log", "", "writes incoming requests to the specified log file (example: --log rh.log)")
 
